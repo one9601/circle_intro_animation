@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+  <div class="intro-wrap">
+    <div class="intro-conBox">
+      <div class="cone">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(function(){
+      setTimeout(() => {
+        $(".cone").addClass("active");
+      }, 1000);
+
+      setTimeout(() => {
+        $(".cone").addClass("active-delay");
+      }, 2500);
+
+      setTimeout(() => {
+        $(".cone").addClass("active-initail");
+      }, 4000);
+
+      setTimeout(() => {
+        $(".cone").addClass("active-last");
+        $(".intro-wrap").addClass("none");
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
