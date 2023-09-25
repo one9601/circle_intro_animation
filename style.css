@@ -1,0 +1,203 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ /* === reset === */
+ 
+ body{
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+}
+
+.intro-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  perspective: 1000px;
+  z-index: 99;
+}
+
+.intro-conBox{
+  width: 120px;
+  height: 140px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.cone{
+  width: 120px;
+  height: 140px;
+  display: block;
+  position: relative;
+}
+
+.circle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 100%;
+  border: 1px solid #fff;
+  width: 20px;
+  height: 20px;
+  transition: all 1s linear;
+}
+
+.cone.active{
+  transform: skew(-10deg, -10deg);
+  transition: all 1s ease-in-out;
+}
+
+
+
+.cone.active .circle:nth-child(1){
+  width: 24px;
+  height: 28px;
+}
+
+.cone.active .circle:nth-child(2){
+  width: 48px;
+  height: 56px;
+}
+
+.cone.active .circle:nth-child(3){
+  width: 72px;
+  height: 84px;
+}
+
+.cone.active .circle:nth-child(4){
+  width: 96px;
+  height: 112px;
+}
+
+.cone.active .circle:nth-child(5){
+  width: 120px;
+  height: 140px;
+}
+
+.cone.active-delay{
+  transform-style: preserve-3d;
+}
+
+.cone.active-delay .circle{
+  top: 0;
+  transform: skew(0, 200deg);
+}
+.cone.active-delay{
+  transform: skew(0, 0);
+}
+.cone.active-delay .circle:nth-child(1){
+  left: 120px;
+}
+.cone.active-delay .circle:nth-child(2){
+  left: 90px;
+}
+.cone.active-delay .circle:nth-child(3){
+  left: 60px;
+}
+.cone.active-delay .circle:nth-child(4){
+  left: 30px;
+}
+.cone.active-delay .circle:nth-child(5){
+  left: 0;
+}
+
+.cone.active-initail{
+  width: 140px;
+  height: 140px;
+}
+.cone.active-initail .circle:last-child{
+  background: #fff;
+}
+.cone.active-initail .circle{
+  transform: skew(0, 180deg) translate(-50%, -50%);
+}
+.cone.active-initail{
+  transform: skew(0, 0);
+}
+.intro-wrap > .intro-conBox > .cone.active-initail .circle{
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.cone.active-last .circle:last-child{
+  animation: circle_scale 1.2s 1 both ease-out;
+  background: #fff;
+}
+
+.intro-wrap.none{
+  animation: none 1s 1 both;
+}
+
+@keyframes none {
+  0%{
+    display: block;
+  }
+  99%{
+    display: block;
+  }
+  100%{
+    display: none;
+  }
+}
+
+@keyframes circle_scale {
+  0%{
+    width: 24px;
+    height: 28px;
+  }
+  100%{
+    width: 2000%;
+    height: 2000%;
+  }
+}
+
+/* === intro === */
